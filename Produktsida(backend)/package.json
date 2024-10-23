@@ -1,0 +1,19 @@
+{
+  "name": "noders_ovning",
+  "version": "1.0.0",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "start": "node --watch ./src/index.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.21.1",
+    "express-validator": "^7.2.0",
+    "validator": "^13.12.0"
+  }
+}
