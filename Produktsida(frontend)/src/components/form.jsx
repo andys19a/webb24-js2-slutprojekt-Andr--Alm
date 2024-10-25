@@ -1,22 +1,34 @@
-export function Form({}){
-    let SearchTerm = '';
+import React, { useState } from 'react';
 
-    function handleChange(event){
-        // event.target innehåller textinputen
-        SearchTerm = event.target.value;
-    }
+export const Form = ({ setProducts }) => {
+  const [searchTerm, setSearchTerm] = useState('');
+    //Jobbar med backend för filtrering
+  const handleSearch = (searchTerm) => {
+    fetch(`http://localhost:3000/products?name=${encodeURIComponent(searchTerm)}`)
+      .then((response) => response.json())
+      .then((filteredProducts) => {
+        setProducts(filteredProducts);
+      })
+      .catch((error) => {
+        console.error("Error fetching products:", error);
+      });
+  };
 
-    function handleSubmit(event){
-        event.preventDefault();
-        console.log(SearchTerm);
-        // event.target innehåller form
-        event.target.reset(); 
-    }
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    handleSearch(searchTerm);
+  };
 
-    return ( 
-        <form onSubmit={handleSubmit}>
-            <input onChange={handleChange} type="text" placeholder="sök produkt"/>
-            <button>Sök!</button>
-        </form>
-    )
-}
+  return (
+    <form onSubmit={handleSubmit}>
+      <input
+        type="text"
+        value={searchTerm}
+        onChange={(e) => setSearchTerm(e.target.value)}
+        placeholder="Sök produkt..."
+      />
+      <button type="submit">Sök</button>
+    </form>
+  );
+};
+

@@ -1,17 +1,4 @@
-.NavBar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background-color: #333;
-    color: #ffffffda;
-    padding: 1rem;
-  }
-
-  a{
-    color: white;
-  }
-
-  .product-page img {
+  .product-box img {
     width: 15%; 
     height: auto; 
     object-fit: cover;

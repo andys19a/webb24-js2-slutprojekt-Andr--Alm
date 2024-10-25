@@ -1,38 +1,42 @@
-    [
-    {
+[
+  {
     "id": 1,
     "name": "Olivolja",
-    "price": 99.90,
-    "stock": 5,
-    "image": "https://cerveranew.cdn.storm.io/46a69321-0c73-44a3-9839-355f72b48994.jpeg?mode=Pad&quality=75&format=webp&width=2048&height=2048"
-    },
-    {
+    "price": 99.9,
+    "stock": 3,
+    "image": "https://cerveranew.cdn.storm.io/46a69321-0c73-44a3-9839-355f72b48994.jpeg?mode=Pad&quality=75&format=webp&width=2048&height=2048",
+    "quantity": ""
+  },
+  {
     "id": 2,
     "name": "Salt",
-    "price": 59.90,
-    "stock": 10,
-    "image": "https://dbhome.se/cdn/shop/files/104980718_01.jpg?v=1725881355"
-    },
-    {
+    "price": 59.9,
+    "stock": 5,
+    "image": "https://dbhome.se/cdn/shop/files/104980718_01.jpg?v=1725881355",
+    "quantity": ""
+  },
+  {
     "id": 3,
     "name": "pasta",
-    "price": 29.90,
-    "stock": 15,
-    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTJGDeL_ws0obgUYwyjjGrwVKT_b_9n-PQiNQ&s"
-    },
-    {
+    "price": 29.9,
+    "stock": 10,
+    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTJGDeL_ws0obgUYwyjjGrwVKT_b_9n-PQiNQ&s",
+    "quantity": ""
+  },
+  {
     "id": 4,
     "name": "Tomatsås",
-    "price": 49.90,
-    "stock": 10,
-    "image": "https://www.med24.se/imgsrv/2024-07-09/19924666/3/taste-of-nature-tomatpassata-eko-500-g.jpg?c=ICa9KZ"
-    },
-    {
+    "price": 49.9,
+    "stock": 9,
+    "image": "https://www.med24.se/imgsrv/2024-07-09/19924666/3/taste-of-nature-tomatpassata-eko-500-g.jpg?c=ICa9KZ",
+    "quantity": ""
+  },
+  {
     "id": 5,
     "name": "Parmesan",
-    "price": 120.90,
+    "price": 120.9,
     "stock": 0,
-    "image": "https://assets.icanet.se/image/upload/cs_srgb/t_product_large_2x_v1/v1668773252/cjuxbbzdsh3ijofaqtr0.webp"
-    }
-    ]
-    
+    "image": "https://assets.icanet.se/image/upload/cs_srgb/t_product_large_2x_v1/v1668773252/cjuxbbzdsh3ijofaqtr0.webp",
+    "quantity": ""
+  }
+]

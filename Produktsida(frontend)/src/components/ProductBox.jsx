@@ -1,49 +1,53 @@
-import React, { useState } from 'react';
+import React from 'react';
 
-export function ProductBox({ product, addToCart }) {
-  const [selectedQty, setSelectedQty] = useState(1); // Börjar med antal 1
+export const ProductBox = ({ product, cartItems, setCartItems }) => {
+  //Ser till att det inte går att köpa vid 0
+  const addToCart = (product) => {
+    const remainingStock = product.stock - (cartItems.find(item => item.id === product.id)?.quantity || 0);
 
-  const totalPrice = product.price * selectedQty; // Beräkna totalpriset
+    if (remainingStock > 0) {
+      const existingItem = cartItems.find((item) => item.id === product.id);
 
-  const handleAddToCart = () => {
-    // Kontrollera att det finns tillräckligt med lager
-    if (selectedQty <= product.stock) {
-      addToCart({
-        name: product.name,
-        quantity: selectedQty,
-        totalPrice: totalPrice,
-      });
+      if (existingItem) {
+        setCartItems((prevItems) =>
+          prevItems.map((item) =>
+            item.id === product.id
+              ? {
+                  ...item,
+                  quantity: item.quantity + 1,
+                  totalPrice: item.totalPrice + product.price,
+              }
+              : item
+          )
+        );
+      } else {
+        setCartItems((prevItems) => [
+          ...prevItems,
+          {
+            ...product,
+            quantity: 1,
+            totalPrice: product.price,
+          },
+        ]);
+      }
+    } else {
+      alert("Tyvärr, inte tillräckligt med lager för den här produkten.");
     }
   };
-
+  //data från backend json fil
   return (
-    <div className="product-page">
-      <div className="product-details">
-        <img src={product.image} alt={product.name} />
-        <h1>{product.name}</h1>
-        <p>Pris: SEK {product.price.toFixed(2)}</p>
-        <p>Tillgängligt: {product.stock}</p> {/* Visa tillgänglig lagerstatus */}
-      </div>
-
-      <div className="quantity-selector">
-        <label>Antal: </label>
-        <input 
-          type="number" 
-          value={selectedQty} 
-          onChange={(e) => setSelectedQty(parseInt(e.target.value) || 1)} 
-          min="1" 
-          max={product.stock} // Sätt maxvärde till lagret
-        />
-      </div>
-
-      <p>Total pris: SEK {totalPrice.toFixed(2)}</p>
+    <div className="product-box">
+      <img src={product.image} alt={product.name} className="product-image" />
+      <h3>{product.name}</h3>
+      <p>Price: {product.price} SEK</p>
+      <p>Stock: {product.stock}</p>
       <button 
-        onClick={handleAddToCart} 
-        disabled={selectedQty > product.stock} // Inaktivera knappen om kvantiteten är mer än lagret
+        onClick={() => addToCart(product)} 
+        disabled={product.stock === 0}
       >
-        Lägg till i varukorg
+        {product.stock > 0 ? "Lägg till i kundvagn" : "Slut i lager"}
       </button>
     </div>
   );
-}
+};
 
