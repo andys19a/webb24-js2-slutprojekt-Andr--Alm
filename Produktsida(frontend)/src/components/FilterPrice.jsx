@@ -1,5 +1,5 @@
 import React from 'react';
-// delar upp produkter och filtrerar högst till lägst och lägst till högst
+// 2 knappar för att visa produkter med högst pris i fallande ordning eller lägst pris med fallande ordning
 function SortButton({ products, setProducts }) {
   const sortByPriceDescending = () => {
     const sortedProducts = [...products].sort((a, b) => b.price - a.price);

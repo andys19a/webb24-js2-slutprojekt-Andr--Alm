@@ -1,5 +1,5 @@
 import React from 'react';
-
+// vid köp informeras kunden om att köpet har gått igenom
 export function ThankYouPage() {
   return (
     <div>

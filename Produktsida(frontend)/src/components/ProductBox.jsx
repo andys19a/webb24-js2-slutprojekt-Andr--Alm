@@ -1,5 +1,5 @@
 import React from 'react';
-
+//Produktbox för att användaren ska ta del av produktinformationen
 export const ProductBox = ({ product, cartItems, setCartItems }) => {
   //Ser till att det inte går att köpa vid 0
   const addToCart = (product) => {
@@ -34,7 +34,6 @@ export const ProductBox = ({ product, cartItems, setCartItems }) => {
       alert("Tyvärr, inte tillräckligt med lager för den här produkten.");
     }
   };
-  //data från backend json fil
   return (
     <div className="product-box">
       <img src={product.image} alt={product.name} className="product-image" />

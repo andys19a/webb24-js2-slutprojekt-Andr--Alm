@@ -1,5 +1,5 @@
 import React from "react";
-
+// Simpel meny för att antingen visa produkter eller varukorg. Visar ett meddelande om produkterna inte syns
 export function NavBar({ showProducts, showCart, cartItemCount, loading, products }) {
   return (
     <nav>

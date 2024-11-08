@@ -1,7 +1,7 @@
 import React from 'react';
 export function Cart({ cartItems, clearCart, setCurrentView, setProducts }) {
   const totalPrice = cartItems.reduce((acc, item) => acc + item.totalPrice, 0);
-
+  //hanterar varukorgen för visa användaren hur många produkter dem lagt till + möjlighet att tömma den och komma tillbaka till produktsidan
   const handleCheckout = () => {
     console.log("Cart items before checkout:", cartItems);
 
